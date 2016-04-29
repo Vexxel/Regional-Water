@@ -16,12 +16,12 @@ import java.util.Arrays;
 
 public class RWModContainer extends DummyModContainer {
 
-    public static Logger log;
+    //public static Logger log;
 
     public RWModContainer() {
         super(new ModMetadata());
         ModMetadata meta = getMetadata();
-        meta.modId = "RegionalWater";
+        meta.modId = "regionalwater";
         meta.name = "Regional Water";
         meta.description = "Enables infinite water in only certain biomes and dimensions that are specified in the config file";
         meta.version = "1.7.10-1.0";
@@ -36,7 +36,7 @@ public class RWModContainer extends DummyModContainer {
 
     @Subscribe
     public void preInit(FMLPreInitializationEvent event) {
-        log = event.getModLog();
+        //log = event.getModLog();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
     }
 }
