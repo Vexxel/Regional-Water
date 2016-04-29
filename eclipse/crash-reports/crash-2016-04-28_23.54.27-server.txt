@@ -1,0 +1,73 @@
+---- Minecraft Crash Report ----
+// Why is it breaking :(
+
+Time: 4/28/16 11:54 PM
+Description: Exception ticking world
+
+java.lang.NullPointerException: Exception ticking world
+	at com.velleth.regionalwater.LocationChecker.initArrays(LocationChecker.java:16)
+	at com.velleth.regionalwater.TransformMethods.shouldGenerateSource(TransformMethods.java:21)
+	at net.minecraft.block.BlockDynamicLiquid.updateTick(BlockDynamicLiquid.java:72)
+	at net.minecraft.world.WorldServer.func_147456_g(WorldServer.java:408)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:191)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:692)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.velleth.regionalwater.LocationChecker.initArrays(LocationChecker.java:16)
+	at com.velleth.regionalwater.TransformMethods.shouldGenerateSource(TransformMethods.java:21)
+	at net.minecraft.block.BlockDynamicLiquid.updateTick(BlockDynamicLiquid.java:72)
+	at net.minecraft.world.WorldServer.func_147456_g(WorldServer.java:408)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:191)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 1 total; [EntityPlayerMP['Player992'/286, l='New World', x=-200.50, y=70.00, z=254.50]]
+	Chunk stats: ServerChunkCache: 634 Drop: 0
+	Level seed: -1578689473902027002
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-204,64,252), Chunk: (at 4,4,12 in -13,15; contains blocks -208,0,240 to -193,255,255), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 5507 game time, 5507 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 104126 (now: false), thunder time: 95127 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:692)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 791149520 bytes (754 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 9, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	regionalwater{1.7.10-1.0} [Regional Water] (minecraft.jar) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player992'/286, l='New World', x=-200.50, y=70.00, z=254.50]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
