@@ -21,7 +21,7 @@ public class LocationChecker {
         }
 
         for (BiomeDictionary.Type biome : validBiomes) {
-            System.out.println("Valid biomes: " + biome.name());
+            RWModContainer.log.info("Valid biomes: " + biome.name());
         }
     }
 
@@ -46,7 +46,7 @@ public class LocationChecker {
             for (BiomeDictionary.Type bannedType : bannedBiomes) {
                 //if the current type and valid type match
                 if (currentType.equals(bannedType)) {
-                    System.out.println("Banned biome");
+                    //System.out.println("Banned biome");
                     return true;
                 }
             }
@@ -66,7 +66,7 @@ public class LocationChecker {
     public static boolean isBannedDim(int dim) {
         for (int d : ConfigHandler.bannedDims) {
             if (d == dim) {
-                System.out.println("Banned dimension");
+                //System.out.println("Banned dimension");
                 return true;
             }
         }

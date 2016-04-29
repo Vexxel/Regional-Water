@@ -24,7 +24,7 @@ public class RWClassTransformer implements IClassTransformer
     }
 
     private static byte[] transform(int index, byte[] classBeingTransformed, boolean isObfuscated) {
-        System.out.println("Transforming: " + targetClasses[index]);
+        RWModContainer.log.info("Transforming: " + targetClasses[index]);
         try {
             ClassNode classNode = new ClassNode();
             ClassReader classReader = new ClassReader(classBeingTransformed);
@@ -84,7 +84,7 @@ public class RWClassTransformer implements IClassTransformer
                     method.instructions.insertBefore(targetNode, toInsert);
                 }
                 else {
-                    System.out.println("Error transforming BlockDynamicLiquid!");
+                    RWModContainer.log.error("Error transforming BlockDynamicLiquid!");
                 }
             }
         }

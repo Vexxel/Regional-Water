@@ -19,7 +19,6 @@ public class TransformMethods {
 
         //Y-axis check
         if (y < ConfigHandler.waterLower || y > ConfigHandler.waterUpper) {
-            System.out.println("Denied. Reason: Too high/low");
             return false;
         }
 

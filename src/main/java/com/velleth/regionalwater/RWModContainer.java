@@ -5,10 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import cpw.mods.fml.common.DummyModContainer;
 import cpw.mods.fml.common.LoadController;
 import cpw.mods.fml.common.ModMetadata;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
@@ -19,10 +16,12 @@ import java.util.Arrays;
 
 public class RWModContainer extends DummyModContainer {
 
+    public static Logger log;
+
     public RWModContainer() {
         super(new ModMetadata());
         ModMetadata meta = getMetadata();
-        meta.modId = "regionalwater";
+        meta.modId = "RegionalWater";
         meta.name = "Regional Water";
         meta.description = "Enables infinite water in only certain biomes and dimensions that are specified in the config file";
         meta.version = "1.7.10-1.0";
@@ -37,6 +36,7 @@ public class RWModContainer extends DummyModContainer {
 
     @Subscribe
     public void preInit(FMLPreInitializationEvent event) {
+        log = event.getModLog();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
     }
 }
