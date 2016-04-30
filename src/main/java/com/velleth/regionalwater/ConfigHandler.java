@@ -16,10 +16,10 @@ public class ConfigHandler {
 
     public static int[] validDims = { 0 };
     public static int[] bannedDims = { -1, 1 };
-    public static int[] oceanDims = { };
+    public static int[] oceanDims = { -14 };
     public static boolean reverse = false;
     public static String[] validBiomeDictionary = { "OCEAN", "BEACH", "RIVER" };
-    public static String[] bannedBiomeDictionary = { "NETHER", "END" };
+    public static String[] bannedBiomeDictionary = { "NETHER", "SKY" };
     public static int waterLower = 0;
     public static int waterUpper = 255;
 
@@ -45,7 +45,7 @@ public class ConfigHandler {
                 "If water should create an infinite source normally (vanilla style), and disabling should be handled via 'bannedDims' and 'bannedBiomes");
 
         validBiomeDictionary = config.getStringList("validBiomes", "general", validBiomeDictionary,
-                "Biome dictionary entries where infinite sources are allowed to be created, eg OCEAN, MAGICAL, or BEACH. Unused if 'reversed' is set to true");
+                "Biome dictionary entries where infinite sources are allowed to be created, eg MOUNTAIN, MAGICAL, or WET. Unused if 'reversed' is set to true");
 
         bannedBiomeDictionary = config.getStringList("bannedBiomes", "general", bannedBiomeDictionary,
                 "Biome dictionary entries where infinite sources are NOT allowed to be created (overrides 'validDims' and 'validBiomes')");
