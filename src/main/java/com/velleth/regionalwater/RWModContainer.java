@@ -24,6 +24,8 @@ public class RWModContainer extends DummyModContainer {
         meta.name = "Regional Water";
         meta.description = "Enables infinite water in only certain biomes and dimensions that are specified in the config file";
         meta.version = "1.7.10-1.0";
+        meta.logoFile = "assets/regionalwater/regionalwaterlogo.png";
+        meta.url = "https://github.com/Zerrens/Regional-Water";
         meta.authorList = Arrays.asList("Velleth");
     }
 
