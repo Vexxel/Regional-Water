@@ -16,6 +16,7 @@ public class ConfigHandler {
 
     public static int[] validDims = { 0 };
     public static int[] bannedDims = { -1, 1 };
+    public static int[] oceanDims = { };
     public static boolean reverse = false;
     public static String[] validBiomeDictionary = { "OCEAN", "BEACH", "RIVER" };
     public static String[] bannedBiomeDictionary = { "NETHER", "END" };
@@ -54,6 +55,9 @@ public class ConfigHandler {
 
         waterUpper = config.getInt("waterUpperBounds", "general", waterUpper, 0, 255,
                 "The highest block on the Y-axis that source water can form at. Must be higher than 'waterLower'");
+
+        oceanDims = config.get("general", "oceanDims", oceanDims,
+                "Dimension array that allows water regeneration regardless of biome (overrides all other config settings)").getIntList();
     }
 
     @SubscribeEvent

@@ -6,7 +6,6 @@ import cpw.mods.fml.common.DummyModContainer;
 import cpw.mods.fml.common.LoadController;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 

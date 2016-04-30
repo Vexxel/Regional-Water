@@ -72,4 +72,13 @@ public class LocationChecker {
         }
         return false;
     }
+
+    public static boolean isOceanDim(int dim) {
+        for (int d : ConfigHandler.oceanDims) {
+            if (d == dim) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
