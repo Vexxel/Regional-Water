@@ -1,0 +1,16 @@
+[
+{
+  "modid": "regionalwater",
+  "name": "Regional Water",
+  "version": "1.0",
+  "mcversion": "1.11.2",
+  "description": "Enables infinite water in only certain biomes and dimensions that are specified in the config file",
+  "credits": "",
+  "logoFile": "regionalwater/regionalwaterlogo.png",
+  "url": "https://github.com/Zerrens/Regional-Water",
+  "updateUrl": "",
+  "authorList": [ "Velleth" ],
+  "screenshots": [],
+  "dependencies": []
+}
+]

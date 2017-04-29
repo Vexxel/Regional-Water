@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.11.2-1.1"
+version = "1.11.2-1.0"
 group= "com.velleth.regionalwater" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "regionalwater"
 
@@ -25,13 +25,6 @@ minecraft {
     version = "1.11.2-13.20.0.2228"
     mappings = "snapshot_20170304"
     runDir = "eclipse"
-}
-
-jar {
-    manifest {
-        attributes 'FMLCorePlugin': 'com.velleth.regionalwater.RegionalWaterCore'
-        attributes 'FMLCorePluginContainsMod': 'true'
-    }
 }
 
 dependencies {

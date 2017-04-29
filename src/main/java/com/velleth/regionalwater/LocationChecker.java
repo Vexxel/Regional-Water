@@ -1,5 +1,7 @@
 package com.velleth.regionalwater;
 
+import java.util.Collection;
+
 import net.minecraftforge.common.BiomeDictionary;
 
 /**
@@ -21,11 +23,11 @@ public class LocationChecker {
         }
 
         for (BiomeDictionary.Type biome : validBiomes) {
-            System.out.println("Valid biomes: " + biome.name());
+            System.out.println("Valid biomes: " + biome.getName());
         }
     }
 
-    public static boolean containsValidBiome(BiomeDictionary.Type[] currentTypes) {
+    public static boolean containsValidBiome(Collection<BiomeDictionary.Type> currentTypes) {
 
         for (BiomeDictionary.Type currentType : currentTypes) {
             //iterates over valid biome types
@@ -39,7 +41,7 @@ public class LocationChecker {
         return false;
     }
 
-    public static boolean containsBannedBiome(BiomeDictionary.Type[] currentTypes) {
+    public static boolean containsBannedBiome(Collection<BiomeDictionary.Type> currentTypes) {
 
         for (BiomeDictionary.Type currentType : currentTypes) {
             //iterates over valid biome types
