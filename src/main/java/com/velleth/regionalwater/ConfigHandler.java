@@ -27,14 +27,13 @@ public class ConfigHandler {
 
         if (config == null) {
             config = new Configuration(configFile);
-            loadConfigValues();
+            reloadConfigValues();
             if (config.hasChanged())
                 config.save();
         }
-
     }
 
-    private static void loadConfigValues() {
+    public static void reloadConfigValues() {
         validDims = config.get("general", "validDims", validDims,
                 "Dimension array to allow infinite source water to be created. Unused if 'reversed' is set to true").getIntList();
 
@@ -58,12 +57,5 @@ public class ConfigHandler {
 
         oceanDims = config.get("general", "oceanDims", oceanDims,
                 "Dimension array that allows water regeneration regardless of biome (overrides all other config settings)").getIntList();
-    }
-
-    @SubscribeEvent
-    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equalsIgnoreCase("regionalwater")) {
-            loadConfigValues();
-        }
     }
 }

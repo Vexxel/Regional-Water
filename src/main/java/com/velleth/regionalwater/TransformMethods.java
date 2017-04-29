@@ -1,8 +1,11 @@
 package com.velleth.regionalwater;
 
+import java.util.Set;
+
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 
 /**
  * Created by Zerren on 4/27/2016.
@@ -32,7 +35,7 @@ public class TransformMethods {
         }
 
         //Banned biome
-        BiomeDictionary.Type[] currentBiomeTypes = BiomeDictionary.getTypesForBiome(world.getBiomeGenForCoords(pos));
+        Set<Type> currentBiomeTypes = BiomeDictionary.getTypes(world.getBiome(pos));
         if (LocationChecker.containsBannedBiome(currentBiomeTypes)) {
             return false;
         }
